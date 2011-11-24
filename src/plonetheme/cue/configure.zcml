@@ -19,7 +19,7 @@
   <plone:static
     type="theme"
     directory="theme/cue"
-    name="cue"
+    name="plonetheme.cue"
     />
 
 </configure>
