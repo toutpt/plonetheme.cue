@@ -2,6 +2,44 @@
 <rules
     xmlns="http://namespaces.plone.org/diazo"
     xmlns:css="http://namespaces.plone.org/diazo/css"
-    xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    css:if-content="#visual-portal-wrapper">
+
+    <theme href="html-3column.html" css:if-content=".template-manage-portlets"/>
+    <theme href="html-3column.html" if="$have_both_portlets"/>
+    <theme href="html-3column.html" if="$have_left_portlets"/>
+    <theme href="html-3column.html" if="$have_right_portlets"/>
+    <theme href="html-1column.html"/>
+
+    <!-- Add meta tags -->
+    <drop theme="/html/head/meta" />
+    <after content="/html/head/meta" theme-children="/html/head" />
+    <replace content="/html/head/title" theme="/html/head/title"/>
+
+    <!-- Copy over the id/class attributes on the body tag.
+             This is important for per-section styling -->
+    <merge attributes="class" css:content="body" css:theme="body" />
+    <copy attributes="id dir" css:content="body" css:theme="body" />
+    
+    <copy attributes="href" css:content="#portal-logo" css:theme="#qg-logo"/>
+    <replace css:content-children="#portal-logo" css:theme-children="#qg-logo"/>
+    <drop css:theme="#site-name"/>
+
+
+    <replace css:content="#portal-globalnav" css:theme-children="#nav-site"/>
+<!--     <replace css:content="#portal-breadcrumbs" css:theme="#breadcrumbs ol"/> -->
+    <drop css:theme="#breadcrumbs"/>
+    <replace css:content-children="#portal-siteactions" css:theme-children="#tools"/>
+<!--     <after css:content="#portal-searchbox" css:theme="#tools"/> -->
+
+    <replace css:content="#portal-column-content" css:theme-children="#content-core"/>
+
+    <replace css:content-children="#portal-column-one" css:theme-children="#nav-section"/>
+    <replace css:content-children="#portal-column-two" css:theme-children="#portal-column-two"/>
+
+    
+    <drop css:theme="#fat-footer"/>
+     <replace css:theme-children="#portal-footer" css:content-children="#portal-footer p"/>
+     <replace css:theme="#portal-siteactions" css:content="#portal-siteactions"/>
 
 </rules>
