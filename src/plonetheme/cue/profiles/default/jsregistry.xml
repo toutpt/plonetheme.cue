@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<object name="portal_javascripts">
+
+  <javascript 
+    id="++theme++plonetheme.cue/js/ie-layout.js"
+    conditionalcomment="lt IE 9"
+    expression="request/HTTP_X_THEME_ENABLED | nothing"
+    />
+  <javascript
+    id="++theme++plonetheme.cue/js/qg.js"
+    expression="request/HTTP_X_THEME_ENABLED | nothing"
+    />
+  <javascript
+    id="++theme++plonetheme.cue/theme/column-height.js"
+    expression="request/HTTP_X_THEME_ENABLED | nothing"
+    />
+</object>

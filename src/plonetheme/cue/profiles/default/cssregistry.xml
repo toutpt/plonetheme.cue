@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!-- This file holds the setup configuration for the portal_css tool. -->
+
+<object name="portal_css">
+  <stylesheet
+    id="public.css"
+    expression="not:request/HTTP_X_THEME_ENABLED | nothing"
+    />
+  <stylesheet
+    id="++theme++plonetheme.cue/css/qg.css"
+    expression="request/HTTP_X_THEME_ENABLED | nothing"
+   />
+  <stylesheet
+    id="++theme++plonetheme.cue/theme/agency.css"
+    expression="request/HTTP_X_THEME_ENABLED | nothing"
+   />
+
+  <stylesheet
+    id="++theme++plonetheme.cue/css/qg-ie.css"
+    conditionalcomment="lt IE 8"
+    expression="request/HTTP_X_THEME_ENABLED | nothing"
+    />
+  <stylesheet
+    id="++theme++plonetheme.cue/theme/agency-ie.css"
+    conditionalcomment="lt IE 8"
+    expression="request/HTTP_X_THEME_ENABLED | nothing"
+    />
+
+  <stylesheet
+    id="++theme++plonetheme.cue/css/layout-small.css"
+    expression="request/HTTP_X_THEME_ENABLED | nothing"
+    />
+
+  <stylesheet
+    id="++theme++plonetheme.cue/css/layout-medium.css"
+    media="only all and (min-width: 43em) and (max-width: 65em)"
+    expression="request/HTTP_X_THEME_ENABLED | nothing"
+    />
+
+  <stylesheet
+    id="++theme++plonetheme.cue/css/layout-large.css"
+    media="only all and (min-width: 65em)"
+    expression="request/HTTP_X_THEME_ENABLED | nothing"
+    />
+  <stylesheet
+    id="++theme++plonetheme.cue/theme/bs-layout-large.css"
+    media="only all and (min-width: 65em)"
+    expression="request/HTTP_X_THEME_ENABLED | nothing"
+    />
+
+</object>

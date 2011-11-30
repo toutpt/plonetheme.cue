@@ -21,6 +21,17 @@
     <merge attributes="class" css:content="body" css:theme="body" />
     <copy attributes="id dir" css:content="body" css:theme="body" />
     
+    <!-- Drop styles in the head - these are added back by including them from Plone -->
+    <drop theme="/html/head/link" />
+    <drop theme="/html/head/style" />
+    <drop css:theme="#bottom-scripts"/>
+    
+    <!-- Pull in Plone CSS -->
+    <after theme-children="/html/head" content="/html/head/link | /html/head/style" />
+    
+    <!-- Pull in Plone CSS -->
+    <after theme-children="/html/head" content="/html/head/script" />
+    
     <copy attributes="href" css:content="#portal-logo" css:theme="#qg-logo"/>
     <replace css:content-children="#portal-logo" css:theme-children="#qg-logo"/>
     <drop css:theme="#site-name"/>
